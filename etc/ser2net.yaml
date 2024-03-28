@@ -1,0 +1,23 @@
+# Sonoff Zigbee 3.0 USB Dongle Plus -> zigbee2mqtt
+connection: &zigbeeUSB1
+    accepter: tcp,20108
+    enable: on
+    connector: serialdev,/dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20230803094303-if00,115200n81,local
+    options:
+        kickolduser: true
+
+# Sonoff Zigbee 3.0 USB Dongle Plus -> Zigbee binding
+connection: &zigbeeUSB2
+    accepter: telnet(rfc2217),3002
+    enable: off
+    connector: serialdev,/dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20230803094303-if00,115200n81,local
+    options:
+        kickolduser: true
+
+# EnOcean USB300
+connection: &enOceanUSB300
+    accepter: telnet,3001
+    enable: off
+    connector: serialdev,/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_ANZ214GH-if00-port0,57600n81,local
+    options:
+        kickolduser: true
